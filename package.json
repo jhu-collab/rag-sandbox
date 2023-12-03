@@ -1,0 +1,31 @@
+{
+  "name": "rag-ds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "responder-supabase": "npx tsx ./src/responder_supabase.ts",
+    "responder-openai": "npx tsx ./src/responder_openai.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.8.2",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@octokit/core": "^5.0.1",
+    "@supabase/supabase-js": "^2.37.0",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1",
+    "langchain": "^0.0.157",
+    "openai": "^4.20.0",
+    "path": "^0.12.7",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^3.11.174"
+  }
+}
