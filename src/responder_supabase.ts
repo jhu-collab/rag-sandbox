@@ -5,24 +5,21 @@ import { RetrievalQAChain } from "langchain/chains";
 import { openAIApiKey } from "./client.js";
 import { vectorStore } from "./client.js";
 import { questions } from "./questions.js";
+import { customInstructions } from "./model_custom_instructions.js";
 
 const model = new OpenAI({ openAIApiKey });
 
 // Initialize a retriever wrapper around the vector store
 const vectorStoreRetriever = vectorStore.asRetriever();
 
-const template = `Be as concise as possible in your responses. 
-Convert LaTeX to unformatted text: convert "( \Omicron(\lg n) )" to "O(log n)". Always try
-to respond using information from the knowledge base. If the question isn't about data structures,
-reply with "I don't assist with anything unrelated to data structures". Limit your responses to 20 tokens.
-Don't include sources in your response. When asked for specific answer, give the answer first and then an explanation.`;
+// Initialize a chain with the model and retriever. This augments the prompts provided to the chain with relevant documents from the vector store
 const chain = RetrievalQAChain.fromLLM(model, vectorStoreRetriever, {});
 
 const promises = questions.map(async (question) => {
   const [similarDocuments, res] = await Promise.all([
     vectorStore.similaritySearch(question, 2), // get the 2 most similar documents
     chain.call({
-      query: `${question}. ${template}`,
+      query: `${question}. ${customInstructions}`,
     }),
   ]);
   return { question, answer: res.text, similarDocuments };

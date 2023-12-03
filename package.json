@@ -7,6 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
+    "generate-supabase-embeddings": "npx tsx ./src/generate_supabase_embeddings.ts",
+    "generate-openai-assistant": "npx tsx ./src/generate_openai_assistant.ts",
     "responder-supabase": "npx tsx ./src/responder_supabase.ts",
     "responder-openai": "npx tsx ./src/responder_openai.ts"
   },
