@@ -4,8 +4,8 @@ import OpenAI from "openai";
 import * as dotenv from "dotenv";
 dotenv.config();
 import { MessageContentText } from "openai/resources/beta/threads/index.mjs";
-import { questions } from "./questions.js";
-import { customInstructions } from "./model_custom_instructions.js";
+import { questions } from "../questions.js";
+import { customInstructions } from "../model_custom_instructions.js";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 

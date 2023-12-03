@@ -1,7 +1,6 @@
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      OPENAI_ASSISTANT_ID: string;
       OPENAI_API_KEY: string;
       SUPABASE_DATABASE_PASSWORD: string;
       SUPABASE_URL: string;

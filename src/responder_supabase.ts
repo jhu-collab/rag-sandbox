@@ -4,8 +4,8 @@ import { OpenAI } from "langchain/llms/openai";
 import { RetrievalQAChain } from "langchain/chains";
 import { openAIApiKey } from "./client.js";
 import { vectorStore } from "./client.js";
-import { questions } from "./questions.js";
-import { customInstructions } from "./model_custom_instructions.js";
+import { questions } from "../questions.js";
+import { customInstructions } from "../model_custom_instructions.js";
 
 const model = new OpenAI({ openAIApiKey });
 

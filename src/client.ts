@@ -5,10 +5,6 @@ import { SupabaseVectorStore } from "langchain/vectorstores/supabase";
 import { OpenAIEmbeddings } from "langchain/embeddings/openai";
 import { Octokit } from "@octokit/core";
 dotenv.config();
-
-export const repositoryOwnerUsername = "K02D";
-export const repositoryName = "retrieval-augmented-generation";
-export const pathToContents = "notes";
 export const githubPersonalAccessToken = process.env.GH_PERSONAL_ACCESS_TOKEN;
 
 export const supabase = createClient(

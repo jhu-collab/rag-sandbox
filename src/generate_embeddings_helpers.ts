@@ -2,15 +2,14 @@ import pdfJS from "pdfjs-dist/build/pdf.js";
 import pkg from "pdfjs-dist";
 import PDFJSWorker from "pdfjs-dist/build/pdf.worker.js";
 import cheerio from "cheerio";
-import {
-  octokit,
-  repositoryName,
-  repositoryOwnerUsername,
-  supabase,
-} from "./client.js";
+import { octokit, supabase } from "./client.js";
 import { TextItem } from "pdfjs-dist/types/src/display/api.js";
 import path from "path";
 import fs from "fs";
+import {
+  repositoryOwnerUsername,
+  repositoryName,
+} from "../notes_repository_info.js";
 
 // Needed to use pdfjs-dist in node and parse PDFs
 pdfJS.GlobalWorkerOptions.workerSrc = PDFJSWorker;

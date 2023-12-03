@@ -1,10 +1,5 @@
 // Combines all notes in a directory into a single text file
 
-import {
-  pathToContents,
-  repositoryOwnerUsername,
-  repositoryName,
-} from "./client.js";
 import OpenAI from "openai";
 import {
   getFilesInNestedGithubDirectory,
@@ -12,6 +7,11 @@ import {
   upsertEnvVariable,
 } from "./generate_embeddings_helpers.js";
 import fs from "fs";
+import {
+  repositoryOwnerUsername,
+  repositoryName,
+  pathToContents,
+} from "../notes_repository_info.js";
 
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
