@@ -16,8 +16,8 @@ Create a `.env` file with all environment variables defined in `environment.d.ts
 
 ### Key Files:
 
-`notes_repository_info.ts`: information about the github repository where the lecture notes are stored.
+`notes_repository_info.ts`: information about the github repository where the lecture notes are stored
 
-`questions.ts` contains the questions that the responders will respond to.
+`questions.ts` contains the questions that the responders will respond to
 
-`model_custom_instructions.ts` contains the custom instructions fed to each responder.
+`model_custom_instructions.ts` contains the custom instructions fed to each responder
